@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Random Specials Assignment</title>
+</head>
+<body>
+    <!-- Specials Tile -->
+    <a href="#" id="specialsTile">Specials</a>
+
+    <script>
+        // List of category short names
+        const categoryShortNames = ["Lunch", "Dinner", "Sushi", /* Add more categories */];
+
+        // Function to get random category short name
+        function getRandomCategoryShortName() {
+            const randomIndex = Math.floor(Math.random() * categoryShortNames.length);
+            return categoryShortNames[randomIndex];
+        }
+
+        // Function to load menu items for a given category
+        var $dc = {
+            loadMenuItems: function(categoryShortName) {
+                // Your code to load menu items for the selected categoryShortName
+                // This could involve making an API call to fetch the menu items for the given category
+                console.log(`Loading menu items for category: ${categoryShortName}`);
+            }
+        };
+
+        // Attach click event to the Specials tile
+        const specialsTile = document.getElementById('specialsTile');
+        specialsTile.addEventListener('click', function() {
+            const randomCategoryShortName = getRandomCategoryShortName();
+            $dc.loadMenuItems(randomCategoryShortName);
+        });
+    </script>
+</body>
+</html>
